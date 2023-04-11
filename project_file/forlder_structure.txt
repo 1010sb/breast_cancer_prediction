@@ -1,0 +1,32 @@
+│
+├── data/
+│   ├── raw_data_breast_cancer.csv
+│   ├── pre_processed_data_breast_cancer.csv
+│   └── ML_ready_data_breast_cancer.csv
+│
+├── models/
+│   ├── all_feature_logistic_regression.pkl
+│   ├── all_feature_svm.pkl
+│   ├── all_feature_decision_tree.pkl
+│   └── all_feature_random_forest.pkl
+
+│   └── SelectKBest_logistic_regression.pkl
+│   ├── SelectKBest_svm.pkl
+│   ├── SelectKBest_decision_tree.pkl
+│   └── SelectKBest_random_forest.pkl
+
+│   └── RFE_logistic_regression.pkl
+│   ├── RFE_feature_svm.pkl
+│   ├── RFE_decision_tree.pkl
+│   └── RFE_random_forest.pkl
+│
+├── notebooks/
+│   ├── data_exploration.ipynb
+│   ├── data_processing.ipynb
+│   ├── model_training.ipynb
+│   └── model_evaluation.ipynb
+│   └── model_deployment.ipynb
+│
+├── requirements.txt
+├── README.md
+└── LICENSE

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Breast Cancer Prediction</title>
+    <style>
+      body {
+        background-color: #F8F8F8;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0;
+      }
+
+      h1 {
+        color: #555555;
+        font-size: 36px;
+        font-weight: bold;
+        margin: 40px 0;
+        text-align: center;
+      }
+
+      label {
+        color: #555555;
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      input[type=text] {
+        border: 2px solid #CCCCCC;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 16px;
+        height: 40px;
+        margin-bottom: 20px;
+        padding: 10px;
+        width: 100%;
+      }
+
+      input[type=submit] {
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        cursor: pointer;
+        font-size: 18px;
+        height: 50px;
+        margin-top: 20px;
+        width: 100%;
+      }
+
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+
+      .container {
+        margin: 0 auto;
+        max-width: 600px;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+     
+      <h1>Breast Cancer Prediction</h1>
+      <form method="post" action="{{ url_for('predict') }}">
+        
+        <label for="radius_mean">Radius Mean:</label>
+        <input type="text" id="radius_mean" name="radius_mean" placeholder="Min-Max Range: 6.981 - 28.11" required="required">
+        <label for="perimeter_mean">Perimeter Mean:</label>
+        <input type="text" id="perimeter_mean" name="perimeter_mean" placeholder="Min-Max Range: 43.79 - 188.5" required="required">
+        <label for="concave_points_mean">Concave Points Mean:</label>
+        <input type="text" id="concave_points_mean" name="concave_points_mean" placeholder="Min-Max Range: 0.0 - 0.2012" required="required">
+        <label for="radius_worst">Radius Worst:</label>
+        <input type="text" id="radius_worst" name="radius_worst" placeholder="Min-Max Range: 7.93 - 36.04" required="required">
+        <label for="perimeter_worst">Perimeter Worst:</label>
+        <input type="text" id="perimeter_worst" name="perimeter_worst" placeholder="Min-Max Range: 50.41 - 251.2" required="required">
+        <label for="area_worst">Area Worst:</label>
+        <input type="text" id="area_worst" name="area_worst" placeholder="Min-Max Range: 185.2 - 4254.0" required="required">
+        <label for="concave_points_worst">Concave Points Worst:</label>
+        <input type="text" id="concave_points_worst" name="concave_points_worst" placeholder="Min-Max Range: 0.0 - 0.291" required="required">
+        <input type="submit" value="Predict">
+        <div class="prediction-result">
+          <p><b>Prediction result:</b> {{prediction_text}}</p> 
+        
+      </form>
+    </div>
+  </body>
+</html>
+
